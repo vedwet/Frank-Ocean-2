@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-sans);
+  --blonde-orange: #ff7b00;
+  --blonde-blue: #a3c4f3;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #000;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Premium Grain Overlay */
+.grain-overlay {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200%;
+  background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+  background-repeat: repeat;
+  animation: grain 8s steps(10) infinite;
+  visibility: visible;
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 50;
+}
+
+@keyframes grain {
+  0%, 100% { transform:translate(0, 0); }
+  10% { transform:translate(-5%, -10%); }
+  20% { transform:translate(-15%, 5%); }
+  30% { transform:translate(7%, -25%); }
+  40% { transform:translate(-5%, 25%); }
+  50% { transform:translate(-15%, 10%); }
+  60% { transform:translate(15%, 0%); }
+  70% { transform:translate(0%, 15%); }
+  80% { transform:translate(3%, 35%); }
+  90% { transform:translate(-10%, 10%); }
+}
+
+.text-glow-blonde {
+  text-shadow: 0 0 10px rgba(255, 123, 0, 0.4), 0 0 20px rgba(255, 123, 0, 0.2);
+}
+
+.text-glow-cyan {
+  text-shadow: 0 0 10px rgba(163, 196, 243, 0.4), 0 0 20px rgba(163, 196, 243, 0.2);
+}
